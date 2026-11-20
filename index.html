@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angel Creative Labs — Contenido que vende esta temporada</title>
+<meta name="description" content="Fotografía de producto, flyers y contenido visual para emprendimientos de moda y belleza.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{ --bg:#FAF9F6; --primary:#2563EB; --secondary:#0F172A; }
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--secondary); font-family:'Inter',sans-serif;}
+  .font-display{font-family:'Playfair Display',serif;}
+  .tab-btn.active{background:var(--primary); color:#fff;}
+  .tab-btn{transition:background .2s,color .2s;}
+  .portfolio-item{display:none;}
+  .portfolio-item.show{display:block;}
+  .wa-float{position:fixed; right:1.25rem; bottom:1.25rem; z-index:50;}
+  .placeholder-img{border:1.5px dashed #94A3B8; color:#64748B;}
+  .carousel-slide{flex:0 0 100%;}
+  @media(min-width:768px){ .carousel-slide{flex:0 0 33.333%;} }
+  .carousel-arrow{position:absolute; top:50%; transform:translateY(-50%); width:2.5rem; height:2.5rem; border-radius:9999px; background:#fff; border:1px solid #E2E8F0; font-size:1.25rem; line-height:1; cursor:pointer;}
+  .carousel-dot{width:.5rem; height:.5rem; border-radius:9999px; background:#CBD5E1; cursor:pointer;}
+  .carousel-dot.active{background:var(--primary); width:1.25rem;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-40 bg-[var(--bg)]/90 backdrop-blur border-b border-slate-200">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <span class="font-display text-xl font-semibold">Angel Creative Labs</span>
+    <nav class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#servicios" class="hover:text-[var(--primary)]">Servicios</a>
+      <a href="#portafolio" class="hover:text-[var(--primary)]">Portafolio</a>
+      <a href="#paquetes" class="hover:text-[var(--primary)]">Paquetes</a>
+      <a href="#contacto" class="hover:text-[var(--primary)]">Contacto</a>
+    </nav>
+    <a data-wa-msg="Hola, quiero cotizar mi contenido de esta temporada." target="_blank" rel="noopener"
+       class="wa-link hidden md:inline-block bg-[var(--primary)] text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90">
+      Cotiza tu contenido
+    </a>
+    <button id="menu-toggle" class="md:hidden text-2xl">☰</button>
+  </div>
+  <nav id="mobile-menu" class="hidden md:hidden flex flex-col gap-4 px-5 pb-5 text-sm">
+    <a href="#servicios">Servicios</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#paquetes">Paquetes</a>
+    <a href="#contacto">Contacto</a>
+    <a data-wa-msg="Hola, quiero cotizar mi contenido de esta temporada." target="_blank" rel="noopener"
+       class="wa-link bg-[var(--primary)] text-white text-center font-medium px-5 py-2.5 rounded-full">Cotiza tu contenido</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-5 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center">
+  <div>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold leading-tight">Contenido que vende esta temporada</h1>
+    <p class="mt-5 text-lg text-slate-600 max-w-md">Fotografía, flyers y producción visual pensados para emprendimientos de moda y belleza que venden por redes sociales.</p>
+    <a data-wa-msg="Hola, quiero cotizar mi contenido de esta temporada." target="_blank" rel="noopener"
+       class="wa-link inline-block mt-8 bg-[var(--primary)] text-white font-medium px-7 py-3.5 rounded-full hover:opacity-90">
+      Cotiza tu contenido
+    </a>
+  </div>
+  <div class="grid grid-cols-2 gap-3">
+    <div class="placeholder-img aspect-[4/5] rounded-xl flex items-center justify-center text-sm col-span-2">
+      <img src="images/ropa_femenina/Vestido_jean_twist.jpg" alt="Angel Creative Labs" class="w-full h-full object-cover">
+    </div>
+    <div class="placeholder-img aspect-[4/5] rounded-xl flex items-center justify-center text-sm">
+      <img src="images/bolsos/bolso_sentada.jpg" alt="Angel Creative Labs" class="w-full h-full object-cover">
+    </div>
+    <div class="placeholder-img aspect-[4/5] rounded-xl flex items-center justify-center text-sm">
+      <img src="images/zapatos/marketing_zapatos.png" alt="Angel Creative Labs" class="w-full h-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="max-w-6xl mx-auto px-5 py-16 border-t border-slate-200">
+  <h2 class="font-display text-3xl font-semibold mb-10">Servicios</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div>
+      <h3 class="font-semibold text-lg">Fotografía de producto</h3>
+      <p class="mt-2 text-slate-600 text-sm">Sesiones pensadas para catálogo y redes, con luz y composición que resaltan tu prenda o producto.</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-lg">Flyers y diseño</h3>
+      <p class="mt-2 text-slate-600 text-sm">Piezas gráficas para campañas, lanzamientos y promociones de temporada.</p>
+    </div>
+    <div id="video-service">
+      <h3 class="font-semibold text-lg">Video</h3>
+      <p class="mt-2 text-slate-600 text-sm">Producción de video (reels, UGC) — próximamente más detalles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTAFOLIO -->
+<section id="portafolio" class="max-w-6xl mx-auto px-5 py-16 border-t border-slate-200">
+  <h2 class="font-display text-3xl font-semibold mb-8">Portafolio</h2>
+  <div id="tabs" class="flex flex-wrap gap-2 mb-8"></div>
+
+  <div class="relative">
+    <div class="carousel-viewport overflow-hidden rounded-xl">
+      <div id="carousel-track" class="flex transition-transform duration-300 ease-out"></div>
+    </div>
+    <button id="carousel-prev" class="carousel-arrow left-2" aria-label="Anterior">‹</button>
+    <button id="carousel-next" class="carousel-arrow right-2" aria-label="Siguiente">›</button>
+  </div>
+  <div id="carousel-dots" class="flex justify-center gap-2 mt-4"></div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="max-w-6xl mx-auto px-5 py-16 border-t border-slate-200">
+  <h2 class="font-display text-3xl font-semibold mb-10">Cómo funciona</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div><span class="font-display text-2xl text-[var(--primary)]">1</span><p class="mt-2 font-semibold">Envía tu solicitud</p><p class="text-sm text-slate-600 mt-1">Cuéntanos qué necesitas para esta temporada.</p></div>
+    <div><span class="font-display text-2xl text-[var(--primary)]">2</span><p class="mt-2 font-semibold">Producimos el contenido</p><p class="text-sm text-slate-600 mt-1">Coordinamos la sesión y creamos las piezas.</p></div>
+    <div><span class="font-display text-2xl text-[var(--primary)]">3</span><p class="mt-2 font-semibold">Recibes el material listo</p><p class="text-sm text-slate-600 mt-1">Listo para publicar en tus redes.</p></div>
+  </div>
+</section>
+
+<!-- PAQUETES -->
+<section id="paquetes" class="max-w-6xl mx-auto px-5 py-16 border-t border-slate-200">
+  <h2 class="font-display text-3xl font-semibold mb-10">Paquetes de temporada</h2>
+  <div id="packages" class="grid md:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="max-w-6xl mx-auto px-5 py-16 border-t border-slate-200">
+  <h2 class="font-display text-3xl font-semibold mb-10">Testimonios</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white rounded-xl p-6 border border-slate-200">
+      <p class="text-xs uppercase tracking-wide text-amber-600 font-semibold mb-3">Ejemplo — reemplazar</p>
+      <p class="text-sm text-slate-600">"El contenido que recibimos elevó muchísimo la percepción de nuestra marca."</p>
+    </div>
+    <div class="bg-white rounded-xl p-6 border border-slate-200">
+      <p class="text-xs uppercase tracking-wide text-amber-600 font-semibold mb-3">Ejemplo — reemplazar</p>
+      <p class="text-sm text-slate-600">"Entrega puntual y fotos listas para publicar el mismo día."</p>
+    </div>
+    <div class="bg-white rounded-xl p-6 border border-slate-200">
+      <p class="text-xs uppercase tracking-wide text-amber-600 font-semibold mb-3">Ejemplo — reemplazar</p>
+      <p class="text-sm text-slate-600">"Justo lo que necesitábamos para la temporada de lanzamiento."</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contacto" class="bg-[var(--secondary)] text-white">
+  <div class="max-w-6xl mx-auto px-5 py-16 text-center">
+    <h2 class="font-display text-3xl font-semibold">Cupos limitados para esta temporada</h2>
+    <div class="mt-7 flex flex-wrap justify-center gap-4">
+      <a data-wa-msg="Hola, quiero más información sobre sus servicios de contenido." target="_blank" rel="noopener"
+         class="wa-link bg-[var(--primary)] px-7 py-3 rounded-full font-medium">Escríbenos por WhatsApp</a>
+      <a id="mailto-cta" href="#" class="border border-white/40 px-7 py-3 rounded-full font-medium">Enviar un email</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="max-w-6xl mx-auto px-5 py-10 flex flex-col md:flex-row justify-between gap-4 text-sm text-slate-500">
+  <span>© 2026 Angel Creative Labs</span>
+  <div class="flex flex-wrap gap-5">
+    <a href="#" class="hover:text-[var(--primary)]">Instagram</a>
+    <a id="mailto-footer" href="#" class="hover:text-[var(--primary)]">Email</a>
+    <a data-wa-msg="Hola, quiero más información sobre sus servicios de contenido." target="_blank" rel="noopener" class="wa-link hover:text-[var(--primary)]">WhatsApp</a>
+    <a href="#" class="hover:text-[var(--primary)]">Términos</a>
+    <a href="#" class="hover:text-[var(--primary)]">Privacidad</a>
+  </div>
+</footer>
+
+<!-- BOTON FLOTANTE -->
+<a data-wa-msg="Hola, quiero más información sobre sus servicios de contenido." target="_blank" rel="noopener"
+   class="wa-link wa-float bg-[var(--primary)] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:opacity-90" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor"><path d="M16 .4C7.4.4.4 7.4.4 16c0 2.8.7 5.5 2.1 7.9L.4 31.6l7.9-2.1c2.3 1.3 4.9 2 7.6 2 8.6 0 15.6-7 15.6-15.6S24.6.4 16 .4zm0 28.3c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.7 1.2 1.3-4.6-.3-.5A12.9 12.9 0 0 1 3.1 16c0-7.1 5.8-12.9 12.9-12.9S28.9 8.9 28.9 16 23.1 28.7 16 28.7zm7.1-9.7c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.3-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.4-2.2-2.8-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.6.2-.2.2-.4.3-.6.1-.3 0-.5 0-.7-.1-.2-.9-2.2-1.3-3-.3-.8-.7-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.5 7.1 6.2 1 .4 1.8.6 2.4.8 1 .3 1.9.3 2.6.2.8-.1 2.3-.9 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+</a>
+
+<script>
+  // ===== CONFIGURA AQUÍ TUS DATOS REALES =====
+  const WHATSAPP_NUMBER = "57XXXXXXXXXX"; // reemplaza con tu número, sin + ni espacios
+  const EMAIL_ADDRESS = "hola@angelcreativelabs.com";
+  const SHOW_VIDEO_SERVICE = true; // cambia a false para ocultar el bloque de Video
+  // =============================================
+
+  function waLink(msg){ return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`; }
+  function mailLink(subject){ return `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(subject)}`; }
+
+  document.querySelectorAll(".wa-link").forEach(el=>{
+    el.href = waLink(el.dataset.waMsg);
+  });
+  document.getElementById("mailto-cta").href = mailLink("Quiero cotizar un paquete");
+  document.getElementById("mailto-footer").href = mailLink("Quiero cotizar un paquete");
+
+  if(!SHOW_VIDEO_SERVICE){ document.getElementById("video-service").remove(); }
+
+  document.getElementById("menu-toggle").addEventListener("click", ()=>{
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+  });
+
+  // ---- Portafolio (carrusel) ----
+  const CATEGORIES = ["Ropa femenina","Bolsos","Zapatos","Ropa masculina"];
+
+  // Lista aquí los archivos reales de cada categoría (carpeta images/<categoria>/).
+  // Si dejas el arreglo vacío, se muestran 3 placeholders "Imagen pendiente".
+  const PORTFOLIO_IMAGES = {
+    "Ropa femenina": ["/ropa_femenina/blusa_roja.png", 
+                      "/ropa_femenina/Vestido_blanco.png",
+                      "/ropa_femenina/Vestido_jean.png",
+                      "/ropa_femenina/Vestido_jean.jpg",
+                      "/ropa_femenina/Vestido_jean_twist.jpg",
+                      "/ropa_femenina/Vestido_negro_espejo.jpg"],
+     "Bolsos": ["bolsos/bolso_completo_twist.jpg",
+                "bolsos/bolso_recostado.jpg",
+                "bolsos/bolso_sentada.jpg",
+                "bolsos/bolso_think.jpg",
+                "bolsos/bolso_editorial.png",
+                "bolsos/bolso_gallery.png",
+                "bolsos/bolso_magazine.png",
+                "bolsos/bolso_street.png"],
+     "Zapatos": ["zapatos/contrapicado_zapatos.png",
+                 "zapatos/marketing_zapatos.png",
+                 "zapatos/street_zapatos.png",
+                 "zapatos/female_street.jpg",
+                 "zapatos/street_2.png"
+     ], 
+     "Ropa masculina": ["ropa_masculina/brazos cruzados.jpg",
+                        "ropa_masculina/modelo_manos_bolsillo.jpg",
+                        "ropa_masculina/modelo_stairs.jpg",
+     ], 
+  };
+
+  const tabsEl = document.getElementById("tabs");
+  const trackEl = document.getElementById("carousel-track");
+  const dotsEl = document.getElementById("carousel-dots");
+  const prevBtn = document.getElementById("carousel-prev");
+  const nextBtn = document.getElementById("carousel-next");
+
+  let currentCat = CATEGORIES[0];
+  let currentIndex = 0;
+  let slideCount = 0;
+
+  CATEGORIES.forEach((cat,i)=>{
+    const btn = document.createElement("button");
+    btn.textContent = cat;
+    btn.className = "tab-btn text-sm px-4 py-2 rounded-full border border-slate-300" + (i===0?" active":"");
+    btn.dataset.cat = cat;
+    btn.addEventListener("click", ()=> selectTab(cat));
+    tabsEl.appendChild(btn);
+  });
+
+  function selectTab(cat){
+    currentCat = cat;
+    currentIndex = 0;
+    tabsEl.querySelectorAll(".tab-btn").forEach(b=> b.classList.toggle("active", b.dataset.cat===cat));
+    renderCarousel(cat);
+  }
+
+  function renderCarousel(cat){
+    const images = PORTFOLIO_IMAGES[cat] || [];
+    const list = images.length > 0 ? images : [null, null, null]; // sin fotos aún: 3 placeholders
+    slideCount = list.length;
+
+    trackEl.innerHTML = list.map(src => `
+      <div class="carousel-slide px-2">
+        ${src
+          ? `<div class="relative group rounded-xl overflow-hidden aspect-[4/5]">
+               <img src="images/${src}" alt="${cat}" class="w-full h-full object-cover">
+               <span class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition flex items-center justify-center text-white opacity-0 group-hover:opacity-100 text-xs">Sesión fotográfica</span>
+             </div>`
+          : `<div class="placeholder-img aspect-[4/5] rounded-xl flex items-center justify-center text-sm">Imagen pendiente</div>`
+        }
+      </div>`).join("");
+
+    dotsEl.innerHTML = list.map((_,n)=> `<button class="carousel-dot${n===0?" active":""}" data-n="${n}"></button>`).join("");
+    dotsEl.querySelectorAll(".carousel-dot").forEach(d=>
+      d.addEventListener("click", ()=> goTo(parseInt(d.dataset.n)))
+    );
+
+    goTo(0);
+  }
+
+  function goTo(n){
+    currentIndex = Math.max(0, Math.min(n, slideCount-1));
+    const perView = window.innerWidth >= 768 ? 3 : 1;
+    const maxIndex = Math.max(0, slideCount - perView);
+    const clamped = Math.min(currentIndex, maxIndex);
+    trackEl.style.transform = `translateX(-${clamped * (100/perView)}%)`;
+    dotsEl.querySelectorAll(".carousel-dot").forEach((d,i)=> d.classList.toggle("active", i===currentIndex));
+  }
+
+  prevBtn.addEventListener("click", ()=> goTo(currentIndex-1));
+  nextBtn.addEventListener("click", ()=> goTo(currentIndex+1));
+  window.addEventListener("resize", ()=> goTo(currentIndex));
+
+  renderCarousel(currentCat);
+
+  // ---- Paquetes ----
+  const PACKAGES = [
+    {name:"Básico", price:"$350.000", items:["[Incluye 1]","[Incluye 2]","[Incluye 3]","[Incluye 4]"], tag:null},
+    {name:"Intermedio", price:"$500.000", items:["[Incluye 1]","[Incluye 2]","[Incluye 3]","[Incluye 4]"], tag:"Más popular"},
+    {name:"Premium", price:"$700.000", items:["[Incluye 1]","[Incluye 2]","[Incluye 3]","[Incluye 4]"], tag:null},
+  ];
+  const pkgEl = document.getElementById("packages");
+  PACKAGES.forEach(p=>{
+    const card = document.createElement("div");
+    const featured = p.tag ? "bg-[var(--secondary)] text-white" : "bg-white border border-slate-200";
+    card.className = `rounded-xl p-7 ${featured} relative`;
+    card.innerHTML = `
+      ${p.tag ? `<span class="absolute -top-3 left-7 bg-[var(--primary)] text-white text-xs px-3 py-1 rounded-full">${p.tag}</span>` : ""}
+      <h3 class="font-display text-xl font-semibold">${p.name}</h3>
+      <p class="text-2xl font-semibold mt-2">${p.price}</p>
+      <ul class="mt-5 space-y-2 text-sm ${p.tag ? "text-slate-200" : "text-slate-600"}">
+        ${p.items.map(i=>`<li>• ${i}</li>`).join("")}
+      </ul>
+      <a href="${waLink("Hola, me interesa el Paquete "+p.name+", ¿me das más información?")}" target="_blank" rel="noopener"
+         class="inline-block mt-6 w-full text-center ${p.tag ? "bg-[var(--primary)]" : "bg-[var(--secondary)] text-white"} px-5 py-2.5 rounded-full text-sm font-medium">
+        Elegir paquete
+      </a>`;
+    pkgEl.appendChild(card);
+  });
+</script>
+</body>
+</html>
